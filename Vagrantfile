@@ -42,4 +42,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.cpus = 2
     end
   end
+
+  # 네 번째 Rocky Linux VM
+  config.vm.define "rocky_vm4" do |rocky_vm4|
+    rocky_vm4.vm.hostname = "rocky-vm4"
+    rocky_vm4.vm.network "private_network", ip: "192.168.56.23"
+    rocky_vm4.vm.provider :virtualbox do |vb|
+      vb.memory = 2048
+      vb.cpus = 2
+    end
+  end
 end
